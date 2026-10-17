@@ -4,9 +4,10 @@ import { Split, Words } from "./Text";
 import { burst } from "../lib/confetti";
 
 const paras = [
-  "Este convite é pequeno perto do que estou sentindo. Aos 15 anos, uma fase se fecha e outra se abre, e eu quero começar a nova com as pessoas que me trouxeram até aqui.",
-  "Cada abraço, cada conselho e cada risada nesses anos me levaram até esta noite. Ter você ao meu lado vai deixar tudo ainda mais especial.",
-  "Obrigada por fazer parte da minha história. Vem comigo?",
+  "Uma fase linda está começando, e eu quero viver esse momento ao lado de pessoas que fazem parte da minha história e que tornam minha vida mais especial.",
+  "Cada momento, cada risada e cada lembrança que compartilho com você têm um lugarzinho no meu coração. E não teria como comemorar uma data tão importante sem ter você comigo!",
+  "Preparei tudo com muito carinho para que seja um dia cheio de alegria, diversão e momentos inesquecíveis. Quero aproveitar cada segundo e guardar lembranças lindas ao lado de quem eu amo!",
+  "Obrigada por fazer parte da minha vida. Agora só falta você para deixar esse dia ainda mais especial! Vem comemorar meus 15 anos comigo?",
 ];
 
 export default function Letter() {
@@ -27,7 +28,6 @@ export default function Letter() {
       <div className={"unfold" + (open ? " open" : "")}>
         <div className={"letter" + (open ? " on" : "")}>
           {paras.map((p) => { const s = n; n += p.split(" ").length; return <p key={p}><Words text={p} start={s} /></p>; })}
-          <p>Com carinho,</p>
           <p className="neon sig">{event.celebrantName}</p>
         </div>
       </div>

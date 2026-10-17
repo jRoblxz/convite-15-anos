@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { Split } from "./Text";
 import { event } from "../config/event";
 
-const { lat, lng, name, address } = event.location;
+const { lat, lng, name, address, mapsUrl } = event.location;
 const rad = (d: number) => (d * Math.PI) / 180;
 const DIRS = ["norte", "nordeste", "leste", "sudeste", "sul", "sudoeste", "oeste", "noroeste"];
 
@@ -19,7 +19,6 @@ export default function Location() {
   const [info, setInfo] = useState<{ km: number; bearing: number } | null>(null);
   const [heading, setHeading] = useState<number | null>(null);
   const [msg, setMsg] = useState("");
-  const q = encodeURIComponent(`${name}, ${address}`);
 
   useEffect(() => {
     if (!info) return;
@@ -63,13 +62,13 @@ export default function Location() {
       </p>
       <button className="btn" onClick={activate}>Ativar bússola</button>
       <p className="note">Sua localização fica só no seu aparelho e não é enviada.</p>
-      <p><strong>{name}</strong><br />{address}</p>
-      <iframe className="map" title={`Mapa de ${name}`} loading="lazy" src={`https://www.google.com/maps?q=${q}&output=embed`} />
+      <p><strong>{name}</strong>{address && <><br />{address}</>}</p>
+      <iframe className="map" title={`Mapa de ${name}`} loading="lazy" src={`https://www.google.com/maps?q=${lat},${lng}&output=embed`} />
       <div className="row">
-        <a className="btn ghost" target="_blank" rel="noreferrer" href={`https://www.google.com/maps/search/?api=1&query=${q}`}>Abrir no Google Maps</a>
+        <a className="btn ghost" target="_blank" rel="noreferrer" href={mapsUrl}>Abrir no Google Maps</a>
         <a className="btn ghost" target="_blank" rel="noreferrer" href={`https://waze.com/ul?ll=${lat},${lng}&navigate=yes`}>Abrir no Waze</a>
         <a className="btn ghost" target="_blank" rel="noreferrer" href={`https://m.uber.com/ul/?action=setPickup&dropoff[latitude]=${lat}&dropoff[longitude]=${lng}`}>Chamar um Uber</a>
-        <button className="btn ghost" onClick={() => navigator.clipboard?.writeText(address)}>Copiar endereço</button>
+        <button className="btn ghost" onClick={() => navigator.clipboard?.writeText(mapsUrl)}>Copiar link do local</button>
       </div>
     </section>
   );

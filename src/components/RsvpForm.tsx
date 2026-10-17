@@ -11,7 +11,7 @@ const THUMB = 52;
 function icsLink() {
   const d = new Date(event.dateISO);
   const f = (x: Date) => x.toISOString().replace(/[-:]/g, "").split(".")[0] + "Z";
-  const loc = `${event.location.name}, ${event.location.address}`.replace(/,/g, "\\,");
+  const loc = [event.location.name, event.location.address].filter(Boolean).join(", ").replace(/,/g, "\\,");
   const t = `BEGIN:VCALENDAR\r\nVERSION:2.0\r\nBEGIN:VEVENT\r\nDTSTART:${f(d)}\r\nDTEND:${f(new Date(d.getTime() + 4 * 36e5))}\r\nSUMMARY:15 anos da ${event.celebrantName}\r\nLOCATION:${loc}\r\nEND:VEVENT\r\nEND:VCALENDAR`;
   return "data:text/calendar;charset=utf8," + encodeURIComponent(t);
 }

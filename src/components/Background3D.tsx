@@ -21,7 +21,7 @@ function Volley() {
 function Perfume() {
   return (
     <group>
-      <mesh><boxGeometry args={[0.95, 1.2, 0.5]} /><meshPhysicalMaterial color="#1B3FA8" transparent opacity={0.75} roughness={0.05} clearcoat={1} /></mesh>
+      <mesh><boxGeometry args={[0.95, 1.2, 0.5]} /><meshPhysicalMaterial color="#3F6BCB" transparent opacity={0.75} roughness={0.05} clearcoat={1} /></mesh>
       <mesh position={[0, 0.72, 0]}><cylinderGeometry args={[0.14, 0.14, 0.25, 24]} /><meshStandardMaterial {...gold} /></mesh>
       <mesh position={[0, 0.98, 0]}><cylinderGeometry args={[0.28, 0.28, 0.3, 24]} /><meshStandardMaterial {...gold} /></mesh>
     </group>
@@ -29,7 +29,7 @@ function Perfume() {
 }
 function Dress() {
   const pts = useMemo(() => [[0.12, 1.3], [0.22, 0.9], [0.17, 0.65], [0.3, 0.55], [0.55, 0], [0.9, -0.8]].map(([x, y]) => new THREE.Vector2(x, y)), []);
-  return <mesh><latheGeometry args={[pts, 40]} /><meshPhysicalMaterial color="#0B1F6B" side={THREE.DoubleSide} sheen={1} sheenColor="#8FB0DE" roughness={0.6} /></mesh>;
+  return <mesh><latheGeometry args={[pts, 40]} /><meshPhysicalMaterial color="#2A55C0" side={THREE.DoubleSide} sheen={1} sheenColor="#8FB0DE" roughness={0.6} /></mesh>;
 }
 function Lipstick() {
   return (
@@ -45,7 +45,7 @@ function Sneaker() {
     <group>
       <mesh position={[0, -0.3, 0]}><boxGeometry args={[2.2, 0.25, 0.8]} /><meshPhysicalMaterial {...pearl} /></mesh>
       <mesh position={[0.5, 0, 0]} scale={[1.2, 0.7, 1]}><sphereGeometry args={[0.55, 32, 32]} /><meshPhysicalMaterial {...pearl} /></mesh>
-      <mesh position={[-0.55, 0.15, 0]}><boxGeometry args={[0.9, 0.8, 0.75]} /><meshPhysicalMaterial color="#1B3FA8" roughness={0.4} clearcoat={0.8} /></mesh>
+      <mesh position={[-0.55, 0.15, 0]}><boxGeometry args={[0.9, 0.8, 0.75]} /><meshPhysicalMaterial color="#3F6BCB" roughness={0.4} clearcoat={0.8} /></mesh>
       <mesh position={[0, -0.14, 0.41]}><boxGeometry args={[1.6, 0.06, 0.02]} /><meshStandardMaterial {...gold} /></mesh>
     </group>
   );
@@ -53,8 +53,8 @@ function Sneaker() {
 function Balloon() {
   return (
     <group>
-      <mesh><sphereGeometry args={[0.8, 40, 40]} /><meshPhysicalMaterial color="#1B3FA8" metalness={0.9} roughness={0.12} clearcoat={1} /></mesh>
-      <mesh position={[0, -0.85, 0]} rotation={[Math.PI, 0, 0]}><coneGeometry args={[0.1, 0.18, 12]} /><meshStandardMaterial color="#1B3FA8" /></mesh>
+      <mesh><sphereGeometry args={[0.8, 40, 40]} /><meshPhysicalMaterial color="#3F6BCB" metalness={0.9} roughness={0.12} clearcoat={1} /></mesh>
+      <mesh position={[0, -0.85, 0]} rotation={[Math.PI, 0, 0]}><coneGeometry args={[0.1, 0.18, 12]} /><meshStandardMaterial color="#3F6BCB" /></mesh>
     </group>
   );
 }

@@ -16,7 +16,7 @@ export function Words({ text, start = 0 }: { text: string; start?: number }) {
   return (
     <>
       {text.split(" ").map((w, i) => (
-        <span key={i} className="w" style={v(start + i)}>{w}{" "}</span>
+        <span key={i}><span className="w" style={v(start + i)}>{w}</span>{" "}</span>
       ))}
     </>
   );

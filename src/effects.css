@@ -16,7 +16,7 @@ body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:5;opac
 @keyframes spin{to{transform:rotate(360deg)}}
 /* veludo com dobras */
 .door{background-image:repeating-linear-gradient(90deg,rgba(0,0,0,.28) 0 14px,rgba(255,255,255,.08) 14px 28px,rgba(0,0,0,.28) 28px 42px),linear-gradient(var(--velvet),var(--velvet))}
-.arch{box-shadow:0 0 80px rgba(27,63,168,.6),inset 0 0 40px rgba(255,255,255,.25)}
+.arch{box-shadow:0 0 80px rgba(63,107,203,.6),inset 0 0 40px rgba(255,255,255,.25)}
 /* brilho passando nos botões e no dourado */
 .btn{position:relative;overflow:hidden}
 .btn:not(.ghost)::after{content:"";position:absolute;inset:0;background:linear-gradient(105deg,transparent 35%,rgba(255,255,255,.55) 50%,transparent 65%);transform:translateX(-120%);animation:shine 4s ease-in-out infinite}
@@ -25,7 +25,7 @@ body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:5;opac
 @keyframes foil{to{background-position:100% 0}}
 /* pérola nos objetos */
 .tag,.ticket{background-image:linear-gradient(135deg,#fff,#e6ecf7 55%,#fff)}
-.letter-scene{background:rgba(168,196,236,.8)}
+.letter-scene{background:rgba(196,216,245,.8)}
 .compass{background-image:repeating-radial-gradient(circle at 50% 50%,rgba(234,213,154,.12) 0 2px,transparent 2px 22px)}
 /* estrelas */
 .stars{position:fixed;inset:0;pointer-events:none;z-index:0;overflow:hidden}
@@ -57,9 +57,9 @@ body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:5;opac
 .dress{transition:fill .4s}
 .no{position:absolute;inset:auto 14px 14px auto;width:32px;height:32px;border-radius:50%;background:var(--gold);color:var(--ink);display:grid;place-items:center;font-weight:600}
 /* carta em envelope */
-.env{position:relative;width:min(86vw,380px);aspect-ratio:3/2;background:#0f2a86;border:1px solid var(--gold);border-radius:6px;perspective:900px;transition:transform 1s var(--ease),opacity 1s}
+.env{position:relative;width:min(86vw,380px);aspect-ratio:3/2;background:#2f5bc4;border:1px solid var(--gold);border-radius:6px;perspective:900px;transition:transform 1s var(--ease),opacity 1s}
 .env::before{content:"";position:absolute;inset:0;background:var(--velvet);clip-path:polygon(0 0,50% 55%,100% 0,100% 100%,0 100%)}
-.flap{position:absolute;inset:0 0 auto 0;height:60%;background:linear-gradient(#17309a,var(--velvet));clip-path:polygon(0 0,100% 0,50% 100%);transform-origin:top;transition:transform .9s var(--ease);z-index:2}
+.flap{position:absolute;inset:0 0 auto 0;height:60%;background:linear-gradient(#3a66c8,var(--velvet));clip-path:polygon(0 0,100% 0,50% 100%);transform-origin:top;transition:transform .9s var(--ease);z-index:2}
 .env.open .flap{transform:rotateX(180deg);z-index:0}
 .env.open{transform:scale(.55);opacity:.5;margin:-3rem 0}
 .seal{position:absolute;left:50%;top:50%;z-index:3;width:64px;height:64px;margin:-32px;border-radius:50%;border:0;cursor:pointer;font:600 1.75rem var(--serif);color:var(--ink);background:radial-gradient(circle at 35% 30%,var(--gold-light),var(--gold) 60%,var(--gold-deep));box-shadow:0 4px 12px rgba(0,0,0,.4);animation:sway 2.5s ease-in-out infinite}
@@ -92,3 +92,9 @@ h1,h2{font-weight:500;letter-spacing:-.01em}
 .thumb{position:absolute;left:4px;top:4px;width:52px;height:52px;border-radius:50%;border:0;cursor:grab;touch-action:none;background:radial-gradient(circle at 35% 30%,var(--gold-light),var(--gold) 60%,var(--gold-deep));box-shadow:0 3px 10px rgba(0,0,0,.4)}
 .thumb:focus-visible{outline:2px solid var(--pearl);outline-offset:3px}
 .thumb::after{content:"›";font:600 1.75rem var(--sans);color:var(--ink)}
+/* v5: nome em Dancing Script, 15 anos branco, azul mais claro */
+.neon{font:500 clamp(3.5rem,17vw,6rem)/1.05 "Dancing Script",cursive;letter-spacing:0;color:#fff;opacity:.55}
+.sig{font-size:3rem}
+.open .neon{opacity:1;text-shadow:0 0 8px rgba(255,255,255,.75),0 0 28px var(--chrome),0 0 54px var(--royal)}
+.arch{background:radial-gradient(circle at 50% 40%,var(--royal),var(--velvet))}
+.foil{background:none;color:#fff;animation:none;font-weight:500;letter-spacing:.08em;text-shadow:0 0 14px rgba(255,255,255,.55)}

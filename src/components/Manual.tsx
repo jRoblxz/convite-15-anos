@@ -19,7 +19,7 @@ export default function Manual() {
   const blue = pick !== null && colors[pick][1];
   const time = new Date(event.dateISO).toLocaleTimeString("pt-BR", { hour: "2-digit", minute: "2-digit" });
   const rules: [keyof typeof I, string, string][] = [
-    ["azul", "Vá com o que quiser, só evite azul", "Rosa, preto, verde, vermelho, branco… tudo combina. O azul, em qualquer tom, é a cor da decoração."],
+    ["azul", "Vá com o que quiser, só evite azul...", "O azul, em qualquer tom, é a cor da decoração."],
     ["data", `Confirme até ${event.rsvpDeadline}`, "É rapidinho: só o seu nome."],
     ["hora", "Seja pontual", `A festa começa às ${time}. Chegue um pouquinho antes.`],
     ["foto", "Tire bastante fotos", "Cada momento merece ser guardado."],
@@ -40,7 +40,7 @@ export default function Manual() {
         {blue && <span className="no">✕</span>}
       </div>
       <div className="swatches">
-        {colors.map(([c, , label], i) => (
+        {colors.map(([c, isBlue, label], i) => (
           <div className="swc" key={c}>
             <button aria-label={label} className="sw" style={{ background: c }} onClick={() => setPick(i)} />
             <small>{label}</small>

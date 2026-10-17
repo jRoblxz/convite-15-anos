@@ -1,6 +1,7 @@
 import { useRef, useState } from "react";
 import type { PointerEvent } from "react";
 import { event } from "../config/event";
+import { burst } from "../lib/confetti";
 
 const balloons = ["b1", "b2", "b3", "b4", "b5", "vb"];
 
@@ -29,7 +30,7 @@ export default function Hero({ open, onOpen }: { open: boolean; onOpen: () => vo
           key={b}
           aria-label="Estourar balão"
           className={`balloon ${b}${popped.includes(b) ? " pop" : ""}`}
-          onClick={() => setPopped((p) => [...p, b])}
+          onClick={(e) => { burst(e.clientX, e.clientY); setPopped((p) => [...p, b]); }}
         />
       ))}
       <div className="arch">

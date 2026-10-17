@@ -2,6 +2,7 @@ import { useState } from "react";
 import type { FormEvent } from "react";
 import { event } from "../config/event";
 import { saveRsvp } from "../services/rsvp";
+import { burst } from "../lib/confetti";
 
 const KEY = "rsvp-name";
 
@@ -18,6 +19,7 @@ export default function RsvpForm() {
     try {
       await saveRsvp({ name });
       localStorage.setItem(KEY, name.trim());
+      burst(window.innerWidth / 2, window.innerHeight / 2, 60);
       setDone(name.trim());
     } catch {
       setStatus("error");

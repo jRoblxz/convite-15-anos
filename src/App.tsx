@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { lazy, Suspense, useState } from "react";
+const Background3D = lazy(() => import("./components/Background3D"));
 import Hero from "./components/Hero";
 import EventDetails from "./components/EventDetails";
 import Location from "./components/Location";
@@ -15,6 +16,7 @@ export default function App() {
   };
   return (
     <main>
+      <Suspense fallback={null}><Background3D /></Suspense>
       <Hero open={open} onOpen={handleOpen} />
       {open && (
         <>

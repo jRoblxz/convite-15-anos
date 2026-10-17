@@ -40,7 +40,7 @@ export default function Manual() {
         {blue && <span className="no">✕</span>}
       </div>
       <div className="swatches">
-        {colors.map(([c, isBlue, label], i) => (
+        {colors.map(([c, , label], i) => (
           <div className="swc" key={c}>
             <button aria-label={label} className="sw" style={{ background: c }} onClick={() => setPick(i)} />
             <small>{label}</small>

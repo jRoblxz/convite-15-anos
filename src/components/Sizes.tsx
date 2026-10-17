@@ -1,3 +1,4 @@
+import { Split } from "./Text";
 import { event } from "../config/event";
 
 export default function Sizes() {
@@ -5,7 +6,7 @@ export default function Sizes() {
   const tags = [["Blusa", top], ["Short e calça", bottom], ["Sapato", shoe]];
   return (
     <section className="scene">
-      <h2>Meus tamanhos</h2>
+      <h2><Split text="Meus tamanhos" /></h2>
       <p>Presente não é obrigação. Se quiser dar uma ajudinha, aqui estão meus tamanhos.</p>
       <div className="tags">
         {tags.map(([label, size], i) => (

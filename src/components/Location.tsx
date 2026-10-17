@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Split } from "./Text";
 import { event } from "../config/event";
 
 const { lat, lng, name, address } = event.location;
@@ -51,7 +52,7 @@ export default function Location() {
 
   return (
     <section className="scene">
-      <h2>Onde é a festa</h2>
+      <h2><Split text="Onde é a festa" /></h2>
       <div className="compass" aria-hidden="true">
         <span className="needle" style={{ transform: `rotate(${angle}deg)` }} />
       </div>

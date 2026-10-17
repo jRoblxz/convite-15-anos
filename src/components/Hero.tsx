@@ -1,5 +1,6 @@
 import { useRef, useState } from "react";
 import type { PointerEvent } from "react";
+import { Split } from "./Text";
 import { event } from "../config/event";
 import { burst } from "../lib/confetti";
 
@@ -37,7 +38,7 @@ export default function Hero({ open, onOpen }: { open: boolean; onOpen: () => vo
         <div className="door l" />
         <div className="door r" />
         <div className="sign">
-          <h1 className="neon">{event.celebrantName}</h1>
+          <h1 className="neon"><Split text={event.celebrantName} cls="nch" /></h1>
           <p className="foil">15 anos</p>
         </div>
       </div>
